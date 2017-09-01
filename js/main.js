@@ -93,15 +93,17 @@ $(document).ready(function() {
       return false;
     }
 
-    $.post('', collectPostData.call(this), function(response) {
-      // Close popup
-      $(this).closest('.popup-contents').find('.popup-close').trigger('click');
+    $.post('/ajax/process-form.php', collectPostData.call(this), function(response) {
+      if (response.success) {
+        // Close popup
+        $(this).closest('.popup-contents').find('.popup-close').trigger('click');
 
-      // Open thanks popup
-      var $popupWrapper = $('.popup-2');
-      $popupWrapper.show(0, function() {
-        $(this).removeClass('invisible')
-      });
+        // Open thanks popup
+        var $popupWrapper = $('.popup-2');
+        $popupWrapper.show(0, function() {
+          $(this).removeClass('invisible')
+        });
+      }
     });
   });
 

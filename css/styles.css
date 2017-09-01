@@ -2048,6 +2048,8 @@ HEADER {
     margin-right: 0;
     display: block;
     position: absolute;
+    max-width: 262px;
+    max-height: 262px;
   }
   .header-cover .rects-wrapper {
     left: 0;
