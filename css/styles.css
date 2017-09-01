@@ -2359,3 +2359,11 @@ HEADER {
     border-bottom: none;
   }
 }
+@media all and (orientation:landscape) and (max-width: 1023px) {
+  .header-cover .small-rect {
+    display: none;
+  }
+  .header-cover .large-rect {
+    max-height: calc(100vh - 85px);
+  }
+}
