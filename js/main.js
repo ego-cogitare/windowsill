@@ -82,10 +82,12 @@ $(document).ready(function() {
   $('#request-now-form').on('submit', function(e) {
     e.preventDefault();
 
+
     $(this).find('INPUT').removeClass('invalid');
 
     // Get phone number field link
     var $phone = $(this).find('INPUT[name="contactPhone"]');
+    var form = this;
 
     // Validate phone number field
     if (!$phone.val().match(/^(\+380|0)?[1-9]\d{8}$/)) {
@@ -96,7 +98,7 @@ $(document).ready(function() {
     $.post('/ajax/process-form.php', collectPostData.call(this), function(response) {
       if (response.success) {
         // Close popup
-        $(this).closest('.popup-contents').find('.popup-close').trigger('click');
+        $(form).closest('.popup-contents').find('.popup-close').trigger('click');
 
         // Open thanks popup
         var $popupWrapper = $('.popup-2');
