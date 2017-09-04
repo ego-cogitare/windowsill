@@ -68,14 +68,17 @@ $(document).ready(function() {
 
   var collectPostData = function() {
     // Selected price
-    var $activeSize = $('.slider-section .swiper-slide-active .product-size.active');
+    var $activeSlide = $('.slider-section .swiper-slide-active');
 
     // Collect form data
     return {
-      price: $activeSize.data('price'),
-      size:  $activeSize.text(),
-      phone: $(this).find('INPUT[name="contactPhone"]').val(),
-      name: $(this).find('INPUT[name="yourName"]').val()
+      form: 'windowsill',
+      price: $activeSlide.find('.product-size.active').data('price'),
+      size: $activeSlide.find('.product-size.active').text(),
+      title: $activeSlide.find('.product-title').text(),
+      color:  $activeSlide.find('.product-brand').text(),
+      userPhone: $(this).find('INPUT[name="contactPhone"]').val(),
+      userName: $(this).find('INPUT[name="yourName"]').val()
     };
   };
 
