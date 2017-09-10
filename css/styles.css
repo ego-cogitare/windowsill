@@ -2361,7 +2361,8 @@ HEADER {
 }
 @media all and (orientation:landscape) and (max-width: 1023px) {
   .header-cover .small-rect {
-    display: none;
+    max-height: calc(50vh - 40px - 1%);
+    max-width: calc(50vh - 40px - 1%);
   }
   .header-cover .large-rect {
     max-height: calc(100vh - 85px);
